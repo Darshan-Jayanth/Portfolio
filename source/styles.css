@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: linear-gradient(to top, #d1fdff 0%, #fddb92 100%);
+}
+#header {
+  background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+}
+#footer {
+  background-image: linear-gradient(to top, #fda34b 0%, #d1fdff 100%);
+}
+
+/* masking image with custom background shape  */
+.profile {
+  -webkit-mask-image: url(../image/graph.png);
+  -webkit-mask-position: bottom left;
+  -webkit-mask-size: 115%;
+  -webkit-mask-repeat: no-repeat;
+}
+hr {
+  border-top: 2px solid black;
+  margin: 0px;
+  margin-top: 10px;
+  padding: 0px;
+}
+
+/* project section link buttons */
+.button {
+  width: 6.5em;
+  height: 2.5em;
+  border-radius: 25px;
+  position: relative;
+  border: none;
+  overflow: hidden;
+  z-index: 1;
+  background-image: linear-gradient(to right, #fddb92 10%, #fda34b 100%);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1rem;
+}
+.button::before {
+  content: "";
+  width: 0;
+  height: 2.5em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  margin: none;
+  background-image: linear-gradient(to right, #f83600 0%, #fda34b 100%);
+  transition: 0.1s ease;
+  display: block;
+  z-index: -1;
+}
+.button:hover::before {
+  width: 100%;
+}
+.button > a {
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* form */
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  border-radius: 15px;
+}
+
+/* contact submit button */
+.button-submit {
+  align-self: center;
+  color: white;
+  height: 2.5em;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  position: relative;
+  border: none;
+  overflow: hidden;
+  z-index: 1;
+  background-image: linear-gradient(to right, #dfe9f3 0%, #1cb5e0 100%);
+}
+.button-submit::before {
+  content: "";
+  width: 0;
+  height: 2.5em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #000851 0%, #1cb5e0 100%);
+  transition: 0.1s ease;
+  display: block;
+  z-index: -1;
+}
+.button-submit:hover::before {
+  width: 100%;
+}
+/* Font changes */
+h1,
+h2 {
+  font-family: "Libre Baskerville", serif;
+  font-size: 2rem;
+}
+h1 {
+  font-size: 2.5rem;
+}
+small {
+  font-size: 13px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+label,
+input,
+h3 {
+  font-family: "Kanit", sans-serif;
+  font-size: 1rem;
+}
+h3 > a {
+  font-size: 1.4rem;
+  color: #f83600;
+  text-decoration: none;
+}
+h3 > a:hover,
+h3 > a:active {
+  font-size: 150%;
+}
+.lead {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+}
+#home .lead {
+  font-size: 1.25rem;
+}
+#footer p {
+  font-family: "Kanit", sans-serif;
+}
+h2 {
+  color: #000851;
+}
+
+/* trying nav bar animation */
+#header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 7rem;
+  padding-top: 2rem;
+}
+.navigation {
+  position: relative;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navigation ul {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  width: 350px;
+}
+.navigation ul li {
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  line-height: 75px;
+  transition: 0.5s;
+}
+.navigation ul li a .text {
+  position: absolute;
+  color: black;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.navigation ul li:hover a .icon {
+  transform: translateY(-20px);
+}
+.navigation ul li:hover a .text {
+  opacity: 1;
+  transform: translateY(10px);
+}
